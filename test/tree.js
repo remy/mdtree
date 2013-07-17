@@ -4,7 +4,7 @@ var mdtree = require('../'),
 
 t.test('corrctly finds top level files', function (t) {
   mdtree.build('test/files', function (err, tree) {
-    console.log(util.inspect(tree, { depth: null, colors: true }));
+    // console.log(util.inspect(tree, { depth: null, colors: true }));
     t.notOk(err, 'returns without error.');
     t.ok(tree, 'returns a truthy object');
     t.equal(tree.files.length, 3, 'finds three top level articles');
@@ -27,7 +27,7 @@ t.test('builds a flat list of articles', function (t) {
     t.notOk(err, 'returns without error.');
     t.ok(tree, 'returns a truthy object');
     var articles = mdtree.files(tree);
-    console.log(util.inspect(articles, { depth: null, colors: true }));
+    // console.log(util.inspect(articles, { depth: null, colors: true }));
     t.equal(articles.length, 7, 'finds 5 articles');
     t.end();
   });
